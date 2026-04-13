@@ -11,7 +11,7 @@ class AiScheduleService extends ChangeNotifier {
   bool _isLoading = false;
   String? _errorMessage;
 
-  final String _apiKey = '';
+  final String _apiKey = 'AIzaSyCcotz5gwj1R5ahvFyRZ7OzsoGDvkt6XkI';
 
   ScheduleAnalysis? get currentAnalysis => _currentAnalysis;
   bool get isLoading => _isLoading;
@@ -25,7 +25,7 @@ class AiScheduleService extends ChangeNotifier {
 
     try {
 
-      final model = GenerativeModel(model: 'gemini-2.5-flash', apiKey: _apiKey);
+      final model = GenerativeModel(model: 'gemini-1.5-flash', apiKey: _apiKey);
       final taskJson = jsonEncode(tasks.map((t) => t.toJson()).toList());
 
       final prompt = '''
